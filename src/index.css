@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#0B0E14] text-white font-sans antialiased;
+}
+
+.clip-path-polygon {
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.clip-path-slant {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.text-shadow-glow {
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+.glass-card {
+  background: rgba(21, 25, 33, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* SVG Text Animations */
+.text-stroke {
+  fill: none;
+  stroke: #555;
+  stroke-width: 2px;
+  stroke-dashoffset: -900;
+  stroke-dasharray: 900;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: dash 2.5s ease-in-out forwards;
+}
+
+.text-stroke-2 {
+  stroke: #2FE9A9;
+  animation-delay: 1.2s;
+}
+
+/* Staggered Delays for Lines */
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.9s;
+}
+
+.delay-3 {
+  animation-delay: 1.5s;
+}
+
+/* Second Line Layer 2 */
+.delay-4 {
+  animation-delay: 1.8s;
+}
+
+/* Third Line Layer 2 */
+
+/* New Arrow Animation */
+.draw-arrow {
+  stroke-width: 2;
+  /* Adjusted from 5 to match text weight better */
+  stroke: #6B7280;
+  /* Rivalioo Grey/Silver instead of dodgerblue */
+  fill: none;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation-duration: 2.0s;
+  animation-fill-mode: forwards;
+  animation-name: draw;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.8;
+}
+
+.draw-arrow.tail-1 {
+  animation-delay: 2.5s;
+  /* Delays adjusted to start after text */
+}
+
+.draw-arrow.tail-2 {
+  animation-delay: 2.7s;
+}
+
+/* Main arrow path delay */
+.draw-arrow.main-arrow {
+  animation-delay: 2.0s;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
