@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* Fallback for GT Walsheim using a CDN or local if available - Placeholder for now used as 'GT Walsheim' family */
+@font-face {
+  font-family: 'GT Walsheim';
+  src: local('GT Walsheim'), local('GTWalsheim-Regular'), url('https://db.onlinewebfonts.com/t/7d4e578c75d40026210f8457634C2366.woff2') format('woff2');
+  /* Using a public CDN link for GT Walsheim Pro Regular as a placeholder/fallback if user doesn't have local files */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#050608] text-white font-sans antialiased overflow-x-hidden;
+  /* Darker, richer black-blue */
+}
+
+/* ... existing code ... */
+
+.glass-card {
+  background: rgba(10, 12, 16, 0.7);
+  /* Darker base */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-panel {
+  /* Much darker glass for premium feel - updated for better visibility */
+  @apply bg-[#0B0E14]/95 backdrop-blur-2xl border border-white/10 shadow-2xl;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display;
+}
+
+/* Autofill styling override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #0B0E14 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Premium Custom Scrollbars - Site Wide */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(47, 233, 169, 0.3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(47, 233, 169, 0.4) 0%, rgba(37, 196, 141, 0.4) 100%);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(47, 233, 169, 0.7) 0%, rgba(37, 196, 141, 0.7) 100%);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #2FE9A9 0%, #25C48D 100%);
+}
+
+/* Custom scrollbar for specific elements */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(47, 233, 169, 0.3);
+  border-radius: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(47, 233, 169, 0.6);
+}
+
+.clip-path-polygon {
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.clip-path-slant {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.text-shadow-glow {
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+.glass-card {
+  background: rgba(21, 25, 33, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* SVG Text Animations */
+.text-stroke {
+  fill: none;
+  stroke: #555;
+  stroke-width: 2px;
+  stroke-dashoffset: -900;
+  stroke-dasharray: 900;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: dash 2.5s ease-in-out forwards;
+}
+
+.text-stroke-2 {
+  stroke: #2FE9A9;
+  animation-delay: 1.2s;
+}
+
+/* Staggered Delays for Lines */
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.9s;
+}
+
+.delay-3 {
+  animation-delay: 1.5s;
+}
+
+/* Second Line Layer 2 */
+.delay-4 {
+  animation-delay: 1.8s;
+}
+
+/* Third Line Layer 2 */
+
+/* New Arrow Animation */
+.draw-arrow {
+  stroke-width: 2;
+  /* Adjusted from 5 to match text weight better */
+  stroke: #6B7280;
+  /* Rivalioo Grey/Silver instead of dodgerblue */
+  fill: none;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation-duration: 2.0s;
+  animation-fill-mode: forwards;
+  animation-name: draw;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.8;
+}
+
+.draw-arrow.tail-1 {
+  animation-delay: 2.5s;
+  /* Delays adjusted to start after text */
+}
+
+.draw-arrow.tail-2 {
+  animation-delay: 2.7s;
+}
+
+/* Main arrow path delay */
+.draw-arrow.main-arrow {
+  animation-delay: 2.0s;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
