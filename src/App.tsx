@@ -14,6 +14,7 @@ import Live from './pages/Live';
 import About from './pages/About';
 import Join from './pages/Join';
 import ComingSoon from './pages/ComingSoon';
+import Subscription from './pages/Subscription';
 import { Footer } from './components/Footer';
 import MinimalFooter from './components/MinimalFooter';
 
@@ -80,6 +81,7 @@ const MainLayout = () => {
               <Route path="/login" element={<PageTransition><AuthPage /></PageTransition>} />
               <Route path="/signup" element={<PageTransition><AuthPage /></PageTransition>} />
               <Route path="/live" element={<PageTransition><FeatureGuard title="LIVE" subtitle="Live is under construction and we'll let you know when done with it."><Live /></FeatureGuard></PageTransition>} />
+              <Route path="/subscription" element={<PageTransition><Subscription /></PageTransition>} />
               <Route path="/coming-soon" element={<PageTransition><ComingSoon /></PageTransition>} />
             </Routes>
           </AnimatePresence>

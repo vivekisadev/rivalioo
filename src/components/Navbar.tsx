@@ -172,6 +172,7 @@ const Navbar = () => {
                             {/* Upgrade */}
                             <Tooltip text="Get Premium Status" position="bottom">
                                 <button
+                                    onClick={() => navigate('/subscription')}
                                     className="px-6 py-2 bg-[#FF5E3A] hover:bg-[#FF4520] text-black font-bold text-xs uppercase tracking-wider transition-all clip-path-polygon"
                                     style={{ clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)' }}
                                 >

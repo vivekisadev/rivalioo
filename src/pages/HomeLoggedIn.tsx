@@ -1,7 +1,7 @@
 import ActiveMatches from '../components/ActiveMatches';
 import FeaturedTournaments from '../components/FeaturedTournaments';
 import CreatorLive from '../components/CreatorLive';
-import UpgradeSection from '../components/UpgradeSection';
+import SubscriptionPlans from '../components/SubscriptionPlans';
 import DashboardHero from '../components/DashboardHero'; // Import the new component
 
 const HomeLoggedIn = () => {
@@ -19,8 +19,8 @@ const HomeLoggedIn = () => {
             {/* Section 3: Creator Live */}
             <CreatorLive />
 
-            {/* Section 4: Upgrade */}
-            <UpgradeSection />
+            {/* Section 4: Subscription Plans */}
+            <SubscriptionPlans />
         </div>
     );
 };

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ShoppingBag, Swords, Crown, Gamepad2 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import ActiveMatches from '../components/ActiveMatches';
+import SubscriptionPlans from '../components/SubscriptionPlans';
 
 const MotionLink = motion(Link);
 
@@ -219,6 +220,9 @@ const LandingPage = () => {
             <ActiveMatches />
 
 
+
+
+
             {/* 3. ROADMAP (Redesigned) */}
             <section className="pb-32 pt-0 bg-[#0B0E14] relative overflow-hidden">
                 {/* Fade In Transition */}
@@ -386,39 +390,9 @@ const LandingPage = () => {
             </section>
 
 
-            {/* 6. SUBSCRIPTION PLANS */}
-            <section className="py-24 bg-[#0B0E14]">
-                <div className="container mx-auto px-6 text-center">
-                    <h2 className="text-4xl font-black uppercase text-white mb-4">Subscription Plans</h2>
-                    <p className="text-gray-400 mb-16">Choose your tier and unlock your potential.</p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {/* Basic */}
-                        <div className="bg-[#151921] border border-white/5 p-6 rounded-2xl relative group overflow-hidden hover:border-[#2FE9A9] transition-all">
-                            <h3 className="text-[#2FE9A9] font-bold uppercase tracking-widest text-xs mb-2">Basic Plan</h3>
-                            <div className="text-3xl font-black text-white mb-6">Free</div>
-                            <ul className="text-left space-y-3 mb-8 text-sm text-gray-400">
-                                <li className="flex gap-2"><div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-1.5"></div> Daily Tournaments</li>
-                                <li className="flex gap-2"><div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-1.5"></div> Community Access</li>
-                            </ul>
-                            <button className="w-full py-3 bg-[#232732] hover:bg-[#2FE9A9] hover:text-black text-white font-bold uppercase rounded-xl transition-colors">Select</button>
-                        </div>
-                        {/* More plans placeholder */}
-                        {[2, 3, 4].map(i => (
-                            <div key={i} className="bg-[#151921] border border-white/5 p-6 rounded-2xl relative group overflow-hidden hover:border-[#FF5E3A] transition-all">
-                                <h3 className="text-[#FF5E3A] font-bold uppercase tracking-widest text-xs mb-2">Pro Plan</h3>
-                                <div className="text-3xl font-black text-white mb-6">$9.99<span className="text-sm text-gray-500 font-normal">/mo</span></div>
-                                <ul className="text-left space-y-3 mb-8 text-sm text-gray-400">
-                                    <li className="flex gap-2"><div className="w-1.5 h-1.5 bg-[#FF5E3A] rounded-full mt-1.5"></div> Premium Tournaments</li>
-                                    <li className="flex gap-2"><div className="w-1.5 h-1.5 bg-[#FF5E3A] rounded-full mt-1.5"></div> No Ads</li>
-                                    <li className="flex gap-2"><div className="w-1.5 h-1.5 bg-[#FF5E3A] rounded-full mt-1.5"></div> Double XP</li>
-                                </ul>
-                                <button className="w-full py-3 bg-[#232732] hover:bg-[#FF5E3A] hover:text-black text-white font-bold uppercase rounded-xl transition-colors">Select</button>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            {/* 6. SUBSCRIPTION PLANS */}
+            <SubscriptionPlans />
 
 
             {/* 7. SQUAD UP & EARN */}

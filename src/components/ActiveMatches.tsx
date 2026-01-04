@@ -159,8 +159,8 @@ const ActiveMatches = ({ showFilters = false }: { showFilters?: boolean }) => {
                                     scale: 1,
                                     transition: { duration: 0.3 }
                                 }}
-                                // Verified Layout: 25% width on desktop, 0 gap
-                                className={`relative flex-shrink-0 ${match.color} h-[280px] lg:h-[500px] w-full md:w-1/2 lg:w-1/4 rounded-tl-[24px] rounded-tr-none rounded-bl-none rounded-br-none lg:rounded-tl-[32px] overflow-hidden lg:group-hover:blur-[2px] transition-[filter] duration-300 hover:!blur-none shadow-[20px_0_50px_-10px_rgba(0,0,0,0.5)] cursor-pointer mb-0`}
+                                // Verified Layout: 25% width on desktop, 0 gap with 'stacked' right drop shadow and stronger inner depth
+                                className={`relative flex-shrink-0 ${match.color} h-[280px] lg:h-[500px] w-full md:w-1/2 lg:w-1/4 rounded-tl-[24px] rounded-tr-none rounded-bl-none rounded-br-none lg:rounded-tl-[32px] overflow-hidden lg:group-hover:blur-[2px] transition-[filter] duration-300 hover:!blur-none shadow-[inset_-60px_0_60px_-10px_rgba(0,0,0,0.25),25px_0_40px_-15px_rgba(0,0,0,0.6)] cursor-pointer mb-0`}
                             >
                                 {/* Top Right Chamfer Effect (Black Bg) - Desktop Only */}
                                 <div className="hidden lg:block absolute -top-[65px] -right-[65px] w-[130px] h-[130px] bg-[#0B0E14] transform rotate-45 z-20"></div>
@@ -187,8 +187,12 @@ const ActiveMatches = ({ showFilters = false }: { showFilters?: boolean }) => {
                                 </div>
 
                                 {/* Bottom Info Bar */}
-                                <div className="absolute -bottom-[1px] lg:-bottom-[2px] -left-[1px] w-[101%] h-[70px] lg:h-[95px] bg-[#003B46] backdrop-blur-md flex items-center justify-between px-4 lg:px-10 z-20">
-                                    <div className="flex gap-2 lg:gap-8 overflow-hidden">
+                                <div className="absolute -bottom-[1px] lg:-bottom-[2px] -left-[1px] w-[101%] h-[70px] lg:h-[95px] bg-[#001F29]/60 backdrop-blur-xl border-t border-white/10 flex items-center justify-between px-4 lg:px-10 z-20">
+                                    <div className="flex gap-4 lg:gap-8 overflow-hidden">
+                                        <div className="flex flex-col">
+                                            <span className="text-[9px] lg:text-[11px] text-[#8aaeb5] font-medium uppercase tracking-wide mb-0.5">Entry</span>
+                                            <span className="text-white font-bold text-xs lg:text-base tracking-wide whitespace-nowrap">{match.entry}</span>
+                                        </div>
                                         <div className="flex flex-col">
                                             <span className="text-[9px] lg:text-[11px] text-[#8aaeb5] font-medium uppercase tracking-wide mb-0.5">Mode</span>
                                             <span className="text-white font-bold text-xs lg:text-base tracking-wide whitespace-nowrap">{match.mode}</span>
