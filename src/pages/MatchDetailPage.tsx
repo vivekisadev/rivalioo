@@ -1,6 +1,5 @@
-import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Trophy, AlertCircle, CheckCircle, Coins, ScrollText, Users } from 'lucide-react';
+import { ArrowLeft, AlertCircle, CheckCircle, Coins, ScrollText } from 'lucide-react';
 
 const MatchDetailPage = () => {
     const { matchId } = useParams();

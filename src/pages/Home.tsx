@@ -1,20 +1,16 @@
 
-import Hero from '../components/Hero';
+import DashboardHero from '../components/DashboardHero';
 import ActiveMatches from '../components/ActiveMatches';
-import Roadmap from '../components/Roadmap';
 import Marketplace from '../components/Marketplace';
 import { Community } from '../components/Community';
-import Pricing from '../components/Pricing';
 
 const Home = () => {
     return (
         <>
-            <Hero />
+            <DashboardHero />
             <ActiveMatches />
-            <Roadmap />
             <Marketplace />
             <Community />
-            <Pricing />
         </>
     );
 };

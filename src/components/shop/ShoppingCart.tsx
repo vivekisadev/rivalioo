@@ -38,12 +38,10 @@ const Button = ({ children, variant = 'default', size = 'default', className = '
 import { useState } from 'react';
 import { marketplaceService } from '../../services/marketplaceService';
 import { useAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
 
 const ShoppingCart = () => {
     const { items, removeItem, isOpen, closeCart, getCartTotal, clearCart } = useCart();
     const { user } = useAuth();
-    const navigate = useNavigate();
     const [processing, setProcessing] = useState(false);
 
     const subtotalINR = getCartTotal('INR');

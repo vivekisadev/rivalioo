@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Check, Lock, CreditCard, Wallet, Zap } from 'lucide-react';
+import { Check, Lock, CreditCard, Zap } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsHighlight, TabsHighlightItem, TabsHighlightProvider } from '../components/ui/animatetabs';
 
 const TopUp = () => {
@@ -10,20 +10,8 @@ const TopUp = () => {
     const [activeTab, setActiveTab] = useState<'credits' | 'tickets'>('credits');
     const [selectedItem, setSelectedItem] = useState<any>(null);
     const [playerId, setPlayerId] = useState('');
-    const [region, setRegion] = useState('Global');
+    const region = 'Global';
     const [error, setError] = useState('');
-
-    // Promo Code Logic
-    const [promoCode, setPromoCode] = useState('');
-    const [isPromoApplied, setIsPromoApplied] = useState(false);
-
-    const handleApplyPromo = () => {
-        if (promoCode.trim().toUpperCase() === 'CREDIT50') {
-            setIsPromoApplied(true);
-        } else {
-            setIsPromoApplied(false); // In a real app, show error
-        }
-    };
 
     useEffect(() => {
         const params = new URLSearchParams(location.search);
@@ -124,7 +112,7 @@ const TopUp = () => {
             return;
         }
         setError('');
-        navigate('/checkout', { state: { item: selectedItem, promoApplied: isPromoApplied } });
+        navigate('/checkout', { state: { item: selectedItem } });
     };
 
     return (

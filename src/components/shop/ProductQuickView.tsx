@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Heart, ChevronLeft, ChevronRight, Check } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
-import { useRef } from 'react';
 import { ImageZoom, Image } from '../ui/imagezoom';
 
 

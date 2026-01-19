@@ -223,9 +223,6 @@ export async function fetchChannelPopularVideos(channelId: string, maxResults: n
 
         if (!data.items || data.items.length === 0) return [];
 
-        // Fetch detailed stats (view counts) for these videos
-        const videoIds = data.items.map((item: any) => item.id.videoId).join(',');
-
         // Batch fetch stats
         const statsMap = await fetchBatchVideoStats(data.items.map((item: any) => item.id.videoId));
 
